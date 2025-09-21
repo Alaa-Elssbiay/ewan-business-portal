@@ -1,59 +1,68 @@
-# EwanBusinessPortal
+# ewan
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
 ## Development server
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```bash
-ng generate component component-name
-```
+## Build
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-```bash
-ng e2e
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Theme
+
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+primereact/resources/themes/md-light-indigo/theme.css
+primereact/resources/themes/md-light-deeppurple/theme.css
+primereact/resources/themes/md-dark-indigo/theme.css
+primereact/resources/themes/md-dark-deeppurple/theme.css
+primereact/resources/themes/mdc-light-indigo/theme.css
+primereact/resources/themes/mdc-dark-indigo/theme.css
+primereact/resources/themes/mdc-dark-deeppurple/theme.css
+primereact/resources/themes/fluent-light/theme.css
+primereact/resources/themes/lara-light-blue/theme.css
+primereact/resources/themes/lara-light-indigo/theme.css
+primereact/resources/themes/lara-light-purple/theme.css
+primereact/resources/themes/lara-light-teal/theme.css
+primereact/resources/themes/lara-dark-blue/theme.css
+primereact/resources/themes/lara-dark-indigo/theme.css
+primereact/resources/themes/lara-dark-purple/theme.css
+primereact/resources/themes/lara-dark-teal/theme.css
+primereact/resources/themes/saga-blue/theme.css
+primereact/resources/themes/saga-green/theme.css
+primereact/resources/themes/saga-orange/theme.css
+primereact/resources/themes/saga-purple/theme.css
+primereact/resources/themes/vela-blue/theme.css
+primereact/resources/themes/vela-green/theme.css
+primereact/resources/themes/vela-orange/theme.css
+primereact/resources/themes/vela-purple/theme.css
+primereact/resources/themes/arya-blue/theme.css
+primereact/resources/themes/arya-green/theme.css
+primereact/resources/themes/arya-orange/theme.css
+primereact/resources/themes/arya-purple/theme.css
+primereact/resources/themes/nova/theme.css
+primereact/resources/themes/nova-alt/theme.css
+primereact/resources/themes/nova-accent/theme.css
+primereact/resources/themes/luna-amber/theme.css
+primereact/resources/themes/luna-blue/theme.css
+primereact/resources/themes/luna-green/theme.css
+primereact/resources/themes/luna-pink/theme.css
+primereact/resources/themes/rhea/theme.css
+```

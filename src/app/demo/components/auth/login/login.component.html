@@ -1,0 +1,111 @@
+<p-toast></p-toast>
+
+<div class="surface-0">
+    <div class="grid">
+        <div class="col-12 logo-container">
+            <img
+                src="assets/demo/images/login/logo.png"
+                alt="ewan"
+                class="avatar"
+            />
+        </div>
+
+        <div class="col-12 xl:col-6 login-card">
+            <div class="login-content">
+                <div class="welcome-section">
+                    <div class="welcome-title">Welcome to ewan!</div>
+                    <span class="welcome-subtitle">Sign in to continue</span>
+                </div>
+
+                <form
+                    [formGroup]="loginForm"
+                    (ngSubmit)="login()"
+                    class="form-container"
+                    novalidate
+                >
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input
+                            id="email"
+                            type="email"
+                            pInputText
+                            formControlName="email"
+                            placeholder="Email address"
+                            [class.ng-invalid]="submitted && f['email'].errors"
+                            [class.ng-dirty]="submitted && f['email'].errors"
+                        />
+                        <small
+                            *ngIf="submitted && f['email'].errors"
+                            class="p-error"
+                        >
+                            <span *ngIf="f['email'].errors['required']">
+                                Email is required.
+                            </span>
+                            <span *ngIf="f['email'].errors['email']">
+                                Email must be valid.
+                            </span>
+                        </small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="password">Password</label>
+
+                        <p-password
+                            formControlName="password"
+                            [class.ng-invalid]="
+                                submitted && f['password'].errors
+                            "
+                            [class.ng-dirty]="submitted && f['password'].errors"
+                            id="password"
+                            styleClass="w-full"
+                            placeholder="Enter a password"
+                        ></p-password>
+                        <small
+                            *ngIf="submitted && f['password'].errors"
+                            class="p-error"
+                        >
+                            <span *ngIf="f['password'].errors['required']">
+                                Password is required.
+                            </span>
+                            <span *ngIf="f['password'].errors['minlength']">
+                                Password must be at least 6 characters.
+                            </span>
+                        </small>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- <div class="checkbox-container">
+                            <p-checkbox
+                                id="rememberme"
+                                formControlName="rememberMe"
+                                [binary]="true"
+                                styleClass="checkbox"
+                            ></p-checkbox>
+                            <label for="rememberme">Remember me</label>
+                        </div> -->
+                        <a
+                            class="forgot-password"
+                            (click)="onForgotPassword()"
+                            role="button"
+                            tabindex="0"
+                            (keydown.enter)="onForgotPassword()"
+                            (keydown.space)="onForgotPassword()"
+                        >
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <button
+                        type="submit"
+                        pButton
+                        pRipple
+                        label="Sign In"
+                        class="login-button"
+                        [disabled]="isLoading"
+                        [loading]="isLoading"
+                    ></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

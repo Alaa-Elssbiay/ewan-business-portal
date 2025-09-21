@@ -1,121 +1,130 @@
 <div class="grid mb-4">
+  @if (customerBalance && customerBalance.Name && customerBalance.Code) {
     <div
-        class="col-12 mb-4"
-        *ngIf="customerBalance && customerBalance.Name && customerBalance.Code"
-    >
-        <div
-            class="surface-card shadow-2 p-4 border-round flex justify-content-between align-items-center"
+      class="col-12 mb-4"
+      >
+      <div
+        class="surface-card shadow-2 p-4 border-round flex justify-content-between align-items-center"
         >
-            <div>
-                <div class="text-900 font-bold text-2xl mb-1">
-                    {{ customerBalance.Name }}
-                </div>
-                <div class="text-500 font-medium text-lg">
-                    Customer Code: {{ customerBalance.Code }}
-                </div>
+        <div>
+          <div class="text-900 font-bold text-2xl mb-1">
+            {{ customerBalance.Name }}
+          </div>
+          <div class="text-500 font-medium text-lg">
+            Customer Code: {{ customerBalance.Code }}
+          </div>
+        </div>
+        <div
+          class="flex align-items-center justify-content-center bg-blue-100 border-round"
+          style="width: 4rem; height: 4rem"
+          >
+          <i class="pi pi-building text-blue-500 text-2xl"></i>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (customerBalance) {
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="surface-card shadow-2 p-3 border-round">
+        <div class="flex justify-content-between mb-3">
+          <div>
+            <span class="block text-500 font-medium mb-3"
+              >Debit Balance</span
+              >
+              <div class="text-900 font-medium text-xl">
+                {{ customerBalance.DebitBalance | number : "1.0-2" }}
+                SAR
+              </div>
             </div>
             <div
-                class="flex align-items-center justify-content-center bg-blue-100 border-round"
-                style="width: 4rem; height: 4rem"
-            >
-                <i class="pi pi-building text-blue-500 text-2xl"></i>
+              class="flex align-items-center justify-content-center bg-blue-100 border-round"
+              style="width: 2.5rem; height: 2.5rem"
+              >
+              <i class="pi pi-arrow-up text-blue-500 text-xl"></i>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    }
 
-    <div class="col-12 md:col-6 lg:col-3" *ngIf="customerBalance">
+    @if (customerBalance) {
+      <div class="col-12 md:col-6 lg:col-3">
         <div class="surface-card shadow-2 p-3 border-round">
-            <div class="flex justify-content-between mb-3">
-                <div>
-                    <span class="block text-500 font-medium mb-3"
-                        >Debit Balance</span
-                    >
-                    <div class="text-900 font-medium text-xl">
-                        {{ customerBalance.DebitBalance | number : "1.0-2" }}
-                        SAR
-                    </div>
-                </div>
-                <div
-                    class="flex align-items-center justify-content-center bg-blue-100 border-round"
-                    style="width: 2.5rem; height: 2.5rem"
+          <div class="flex justify-content-between mb-3">
+            <div>
+              <span class="block text-500 font-medium mb-3"
+                >Credit Balance</span
                 >
-                    <i class="pi pi-arrow-up text-blue-500 text-xl"></i>
+                <div class="text-900 font-medium text-xl">
+                  {{ customerBalance.CreditBalance | number : "1.0-2" }}
+                  SAR
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 md:col-6 lg:col-3" *ngIf="customerBalance">
-        <div class="surface-card shadow-2 p-3 border-round">
-            <div class="flex justify-content-between mb-3">
-                <div>
-                    <span class="block text-500 font-medium mb-3"
-                        >Credit Balance</span
-                    >
-                    <div class="text-900 font-medium text-xl">
-                        {{ customerBalance.CreditBalance | number : "1.0-2" }}
-                        SAR
-                    </div>
-                </div>
-                <div
-                    class="flex align-items-center justify-content-center bg-orange-100 border-round"
-                    style="width: 2.5rem; height: 2.5rem"
+              </div>
+              <div
+                class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                style="width: 2.5rem; height: 2.5rem"
                 >
-                    <i class="pi pi-arrow-down text-orange-500 text-xl"></i>
-                </div>
+                <i class="pi pi-arrow-down text-orange-500 text-xl"></i>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      }
 
-    <div class="col-12 md:col-6 lg:col-3" *ngIf="customerBalance">
-        <div class="surface-card shadow-2 p-3 border-round">
+      @if (customerBalance) {
+        <div class="col-12 md:col-6 lg:col-3">
+          <div class="surface-card shadow-2 p-3 border-round">
             <div class="flex justify-content-between mb-3">
-                <div>
-                    <span class="block text-500 font-medium mb-3"
-                        >Current Balance</span
-                    >
-                    <div class="text-900 font-medium text-xl">
-                        {{ customerBalance.CurrentBalance | number : "1.0-2" }}
-                        SAR
-                    </div>
+              <div>
+                <span class="block text-500 font-medium mb-3"
+                  >Current Balance</span
+                  >
+                  <div class="text-900 font-medium text-xl">
+                    {{ customerBalance.CurrentBalance | number : "1.0-2" }}
+                    SAR
+                  </div>
                 </div>
                 <div
-                    class="flex align-items-center justify-content-center bg-cyan-100 border-round"
-                    style="width: 2.5rem; height: 2.5rem"
-                >
-                    <i class="pi pi-wallet text-cyan-500 text-xl"></i>
+                  class="flex align-items-center justify-content-center bg-cyan-100 border-round"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >
+                  <i class="pi pi-wallet text-cyan-500 text-xl"></i>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+        }
 
-    <div class="col-12 md:col-6 lg:col-3" *ngIf="customerBalance">
-        <div class="surface-card shadow-2 p-3 border-round">
-            <div class="flex justify-content-between mb-3">
+        @if (customerBalance) {
+          <div class="col-12 md:col-6 lg:col-3">
+            <div class="surface-card shadow-2 p-3 border-round">
+              <div class="flex justify-content-between mb-3">
                 <div>
-                    <span class="block text-500 font-medium mb-3"
-                        >Total Balance</span
+                  <span class="block text-500 font-medium mb-3"
+                    >Total Balance</span
                     >
                     <div class="text-900 font-medium text-xl">
-                        {{ customerBalance.TotalBalance | number : "1.0-2" }}
-                        SAR
+                      {{ customerBalance.TotalBalance | number : "1.0-2" }}
+                      SAR
                     </div>
-                </div>
-                <div
+                  </div>
+                  <div
                     class="flex align-items-center justify-content-center bg-purple-100 border-round"
                     style="width: 2.5rem; height: 2.5rem"
-                >
+                    >
                     <i class="pi pi-chart-line text-purple-500 text-xl"></i>
+                  </div>
                 </div>
+              </div>
             </div>
+          }
         </div>
-    </div>
-</div>
 
-<p-tabView>
-    <p-tabPanel header="Credit">
-        <div class="card">
-            <p-table
+        <p-tabView>
+          <p-tabPanel header="Credit">
+            <div class="card">
+              <p-table
                 #creditTable
                 [value]="creditItems"
                 dataKey="CreditReceivableId"
@@ -132,41 +141,41 @@
                     'StatusId'
                 ]"
                 responsiveLayout="scroll"
-            >
+                >
                 <ng-template pTemplate="header">
-                    <tr>
-                        <th>Document No.</th>
-                        <th>Document Date</th>
-                        <th>Customer Code</th>
-                        <th>Contract No.</th>
-                        <th>Document Type</th>
-                        <th>Amount</th>
-                    </tr>
+                  <tr>
+                    <th>Document No.</th>
+                    <th>Document Date</th>
+                    <th>Customer Code</th>
+                    <th>Contract No.</th>
+                    <th>Document Type</th>
+                    <th>Amount</th>
+                  </tr>
                 </ng-template>
 
                 <ng-template pTemplate="body" let-item>
-                    <tr>
-                        <td>{{ item.CreditReceivableId }}</td>
-                        <td>{{ item.DocumentDate | date : "dd/MM/yyyy" }}</td>
-                        <td>{{ item.CustomerCode }}</td>
-                        <td>{{ item.ContractCode }}</td>
-                        <td>{{ item.CreditReceivableTypeName }}</td>
-                        <td>{{ item.NetValue | number : "1.0-2" }} SAR</td>
-                    </tr>
+                  <tr>
+                    <td>{{ item.CreditReceivableId }}</td>
+                    <td>{{ item.DocumentDate | date : "dd/MM/yyyy" }}</td>
+                    <td>{{ item.CustomerCode }}</td>
+                    <td>{{ item.ContractCode }}</td>
+                    <td>{{ item.CreditReceivableTypeName }}</td>
+                    <td>{{ item.NetValue | number : "1.0-2" }} SAR</td>
+                  </tr>
                 </ng-template>
 
                 <ng-template pTemplate="emptymessage">
-                    <tr>
-                        <td colspan="6">No data found.</td>
-                    </tr>
+                  <tr>
+                    <td colspan="6">No data found.</td>
+                  </tr>
                 </ng-template>
-            </p-table>
-        </div>
-    </p-tabPanel>
+              </p-table>
+            </div>
+          </p-tabPanel>
 
-    <p-tabPanel header="Debit">
-        <div class="card">
-            <p-table
+          <p-tabPanel header="Debit">
+            <div class="card">
+              <p-table
                 #debitTable
                 [value]="debitItems"
                 dataKey="DebitId"
@@ -182,35 +191,35 @@
                     'NetValue'
                 ]"
                 responsiveLayout="scroll"
-            >
+                >
                 <ng-template pTemplate="header">
-                    <tr>
-                        <th>Document No.</th>
-                        <th>Document Date</th>
-                        <th>Customer Code</th>
-                        <th>Contract No.</th>
-                        <th>Document Type</th>
-                        <th>Amount</th>
-                    </tr>
+                  <tr>
+                    <th>Document No.</th>
+                    <th>Document Date</th>
+                    <th>Customer Code</th>
+                    <th>Contract No.</th>
+                    <th>Document Type</th>
+                    <th>Amount</th>
+                  </tr>
                 </ng-template>
 
                 <ng-template pTemplate="body" let-item>
-                    <tr>
-                        <td>{{ item.DebitId }}</td>
-                        <td>{{ item.DocumentDate | date : "dd/MM/yyyy" }}</td>
-                        <td>{{ item.CustomerCode }}</td>
-                        <td>{{ item.ContractCode }}</td>
-                        <td>{{ item.DebitReceivableTypeName }}</td>
-                        <td>{{ item.NetValue | number : "1.0-2" }} SAR</td>
-                    </tr>
+                  <tr>
+                    <td>{{ item.DebitId }}</td>
+                    <td>{{ item.DocumentDate | date : "dd/MM/yyyy" }}</td>
+                    <td>{{ item.CustomerCode }}</td>
+                    <td>{{ item.ContractCode }}</td>
+                    <td>{{ item.DebitReceivableTypeName }}</td>
+                    <td>{{ item.NetValue | number : "1.0-2" }} SAR</td>
+                  </tr>
                 </ng-template>
 
                 <ng-template pTemplate="emptymessage">
-                    <tr>
-                        <td colspan="6">No data found.</td>
-                    </tr>
+                  <tr>
+                    <td colspan="6">No data found.</td>
+                  </tr>
                 </ng-template>
-            </p-table>
-        </div>
-    </p-tabPanel>
-</p-tabView>
+              </p-table>
+            </div>
+          </p-tabPanel>
+        </p-tabView>

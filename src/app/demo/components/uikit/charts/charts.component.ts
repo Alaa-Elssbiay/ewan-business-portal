@@ -3,7 +3,8 @@ import { Subscription } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
-    templateUrl: './charts.component.html'
+    templateUrl: './charts.component.html',
+    standalone: false
 })
 export class ChartsComponent implements OnInit, OnDestroy {
 

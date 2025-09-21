@@ -22,6 +22,7 @@ interface LoginResponse {
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     providers: [MessageService],
+    standalone: false
 })
 export class LoginComponent implements OnInit, OnDestroy {
     loginForm!: FormGroup;

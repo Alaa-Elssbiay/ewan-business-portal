@@ -20,7 +20,7 @@ import { DashboardService } from 'src/app/layout/service/customer-balance.servic
             }
         `,
     ],
-    standalone: false
+    standalone: false,
 })
 export class DashboardComponent implements OnInit {
     customerBalance: any = {};

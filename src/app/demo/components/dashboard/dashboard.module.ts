@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard.component';
 import { ChartModule } from 'primeng/chart';
 import { MenuModule } from 'primeng/menu';
 import { TableModule } from 'primeng/table';
@@ -10,6 +9,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { DashboardsRoutingModule } from './dashboard-routing.module';
 import { TabViewModule } from 'primeng/tabview';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
     imports: [
@@ -22,8 +22,8 @@ import { TabViewModule } from 'primeng/tabview';
         PanelMenuModule,
         ButtonModule,
         DashboardsRoutingModule,
-        TabViewModule 
+        TabViewModule,
     ],
-    declarations: [DashboardComponent]
+    declarations: [DashboardComponent],
 })
-export class DashboardModule { }
+export class DashboardModule {}

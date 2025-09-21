@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
     imports: [
         RouterModule.forRoot(
             [
-                { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+                { path: '', redirectTo: 'login', pathMatch: 'full' },
 
                 {
                     path: '',
@@ -21,20 +21,20 @@ import { NgModule } from '@angular/core';
                                 ).then((m) => m.DashboardModule),
                         },
                         {
-                            path: 'uikit',
+                            path: 'uikit/charts',
                             loadChildren: () =>
                                 import(
-                                    './demo/components/uikit/uikit.module'
-                                ).then((m) => m.UikitModule),
+                                    './demo/components/uikit/charts/charts.module'
+                                ).then((m) => m.ChartsModule),
                         },
                     ],
                 },
 
                 {
-                    path: 'auth',
+                    path: 'login',
                     loadChildren: () =>
-                        import('./demo/components/auth/auth.module').then(
-                            (m) => m.AuthModule
+                        import('./demo/components/login/login.module').then(
+                            (m) => m.LoginModule
                         ),
                 },
 

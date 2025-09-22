@@ -21,10 +21,10 @@ import { NgModule } from '@angular/core';
                                 ).then((m) => m.DashboardModule),
                         },
                         {
-                            path: 'uikit/charts',
+                            path: 'charts',
                             loadChildren: () =>
                                 import(
-                                    './demo/components/uikit/charts/charts.module'
+                                    './demo/components/charts/charts.module'
                                 ).then((m) => m.ChartsModule),
                         },
                     ],

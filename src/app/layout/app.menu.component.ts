@@ -5,7 +5,7 @@ import { LayoutService } from './service/app.layout.service';
 @Component({
     selector: 'app-menu',
     templateUrl: './app.menu.component.html',
-    standalone: false
+    standalone: false,
 })
 export class AppMenuComponent implements OnInit {
     model: any[] = [];
@@ -30,7 +30,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Chart',
                         icon: 'pi pi-fw pi-chart-bar',
-                        routerLink: ['/uikit/charts'],
+                        routerLink: ['charts'],
                     },
                 ],
             },

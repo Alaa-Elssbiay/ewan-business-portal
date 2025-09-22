@@ -15,14 +15,12 @@ import { RippleModule } from 'primeng/ripple';
 import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
 import { RouterModule } from '@angular/router';
-import { AppTopBarComponent } from './app.topbar.component';
 import { AppLayoutComponent } from './app.layout.component';
 import { AppConfigModule } from './config/config.module';
 
 @NgModule({
     declarations: [
         AppMenuitemComponent,
-        AppTopBarComponent,
         AppMenuComponent,
         AppLayoutComponent,
     ],

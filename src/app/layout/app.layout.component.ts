@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
 
 @Component({
@@ -6,9 +6,35 @@ import { LayoutService } from './service/app.layout.service';
     templateUrl: './app.layout.component.html',
     standalone: false,
 })
-export class AppLayoutComponent {
+export class AppLayoutComponent implements OnInit {
+    model: any[] = [];
+
     constructor(public layoutService: LayoutService) {}
 
+    ngOnInit() {
+        this.model = [
+            {
+                label: 'Home',
+                items: [
+                    {
+                        label: 'Company Details',
+                        icon: 'pi pi-fw pi-home',
+                        routerLink: ['/dashboard'],
+                    },
+                ],
+            },
+            {
+                label: 'UI Components',
+                items: [
+                    {
+                        label: 'Chart',
+                        icon: 'pi pi-fw pi-chart-bar',
+                        routerLink: ['charts'],
+                    },
+                ],
+            },
+        ];
+    }
     get containerClass() {
         return {
             'layout-theme-light':

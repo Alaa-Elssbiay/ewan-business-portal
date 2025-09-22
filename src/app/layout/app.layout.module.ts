@@ -12,18 +12,13 @@ import { BadgeModule } from 'primeng/badge';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { RippleModule } from 'primeng/ripple';
-import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
 import { RouterModule } from '@angular/router';
 import { AppLayoutComponent } from './app.layout.component';
 import { AppConfigModule } from './config/config.module';
 
 @NgModule({
-    declarations: [
-        AppMenuitemComponent,
-        AppMenuComponent,
-        AppLayoutComponent,
-    ],
+    declarations: [AppMenuitemComponent, AppLayoutComponent],
     exports: [AppLayoutComponent],
     imports: [
         BrowserModule,
